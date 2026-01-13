@@ -1,0 +1,273 @@
+/* ========================================
+   CSS AMÉLIORÉ - PAGE D'ACCUEIL
+   ======================================== */
+
+/* Reset de base */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Body */
+body {
+  margin: 20px;
+  padding: 20px;
+  min-height: 100vh;
+  background-image: linear-gradient(to right top, #191921, #191d27, #17222d, #152731, #112c35, #1c3941, #27464d, #33535a, #4f6d76, #6c8992, #8ba6b0, #aac3ce);
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  box-shadow: -10px 0 15px rgba(0, 0, 0, 0.5); 
+  border-radius: 10px;  
+}
+
+/* ========== HEADER ========== */
+header {
+  background-image: url("/photoEmp.jpg");
+  background-size: cover;
+  background-position: center;
+  display: flex;
+  flex-direction: column;
+  color: white;
+  min-height: 400px; /* Augmenté pour plus d'impact */
+  background-color: rgba(0, 0, 0, 0.4); /* Assombri pour meilleure lisibilité */
+  padding: 30px;
+  border-radius: 10px;
+  position: relative;
+}
+
+/* Overlay pour améliorer la lisibilité */
+header::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.3);
+  border-radius: 10px;
+  z-index: 0;
+}
+
+header > * {
+  position: relative;
+  z-index: 1;
+}
+
+/* ========== NAVIGATION ========== */
+.div1 {
+  display: flex;
+  flex-direction: row;
+  gap: 15px;
+  margin-bottom: 30px;
+}
+
+.color {
+  padding: 12px 24px;
+  background-color: rgba(255, 255, 255, 0.15);
+  color: white;
+  border: 2px solid rgba(255, 255, 255, 0.3);
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 16px;
+  font-weight: 600;
+  transition: all 0.3s ease;
+  backdrop-filter: blur(10px); /* Effet glassmorphism */
+}
+
+.color:hover {
+  background-color: rgba(255, 255, 255, 0.3);
+  border-color: rgba(255, 255, 255, 0.6);
+  transform: translateY(-3px);
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+}
+
+/* ========== SECTION HERO (DIV2) ========== */
+.div2 {
+  display: flex;
+  flex-direction: row;
+  gap: 20px;
+  justify-content: space-between;
+  align-items: center;
+  flex: 1;
+  margin-bottom: 30px;
+}
+
+/* Box de description à droite */
+.right-box {
+  background-color: rgba(255, 255, 255, 0.85);
+  backdrop-filter: blur(10px);
+  max-width: 500px;
+  border-radius: 12px;
+  padding: 25px;
+  font-size: 16px;
+  color: #1a1a1a;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+  margin-left: auto;
+  transition: all 0.3s ease;
+  line-height: 1.6;
+  height: 100px;
+  overflow: auto;
+}
+
+.right-box:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.3);
+  background-color: rgba(255, 255, 255, 0.95);
+}
+
+/* ========== TITRE "SCHEDULE APP" ========== */
+.div3 {
+  display: flex;
+  flex-direction: column;
+  background-color: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(10px);
+  padding: 20px 30px;
+  border-radius: 12px;
+  min-width: 300px;
+  border: 2px solid rgba(255, 255, 255, 0.2);
+}
+
+.font {
+  font-size: 60px;
+  font-family: 'Lucida Handwriting', cursive;
+  font-weight: bold;
+  line-height: 1;
+  margin-bottom: -10px;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+.font1 {
+  font-size: 60px;
+  font-weight: bold;
+  line-height: 1;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+/* ========== MAIN ========== */
+main {
+  margin-top: 20px;
+  padding: 30px;
+}
+
+/* ========== SECTION PRINCIPALE (DIV5) ========== */
+.div5 {
+  display: flex;
+  flex-direction: row;
+  align-items: stretch; /* Hauteurs égales */
+  gap: 30px;
+}
+
+/* Box de gauche (À propos) */
+.left-box {
+  background-color: rgba(255, 255, 255, 0.15);
+  backdrop-filter: blur(10px);
+  width: 300px;
+  min-height: 250px;
+  border-radius: 12px;
+  padding: 25px;
+  font-size: 16px;
+  color: white;
+  flex-shrink: 0;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  line-height: 1.6;
+  transition: all 0.3s ease;
+  overflow: auto;
+}
+
+.left-box:hover {
+  background-color: rgba(255, 255, 255, 0.25);
+  transform: translateY(-3px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+}
+
+/* ========== SECTION DROITE (DIV6) ========== */
+.div6 {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  background-color: rgba(255, 255, 255, 0.15);
+  backdrop-filter: blur(10px);
+  flex: 1;
+  min-height: 250px;
+  border-radius: 12px;
+  padding: 25px;
+  font-size: 16px;
+  color: white;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  line-height: 1.6;
+  height: 200px;
+  overflow: auto;
+}
+
+/* Container des boutons */
+.div6 article {
+  display: flex;
+  flex-direction: row;
+  gap: 15px;
+  margin-top: 20px;
+}
+
+/* Boutons Enseignant/Admin */
+.div6 button {
+  padding: 14px 30px;
+  background-color: rgba(255, 255, 255, 0.2);
+  color: white;
+  border: 2px solid rgba(255, 255, 255, 0.4);
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 16px;
+  font-weight: 600;
+  transition: all 0.3s ease;
+  backdrop-filter: blur(5px);
+  flex: 1; /* Boutons de même taille */
+}
+
+.div6 button:hover {
+  background-color: rgba(255, 255, 255, 0.3);
+  border-color: rgba(255, 255, 255, 0.6);
+  transform: translateY(-3px);
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+}
+
+/* ========== RESPONSIVE ========== */
+@media (max-width: 768px) {
+  body {
+    margin: 10px;
+    padding: 10px;
+  }
+
+  header {
+    min-height: 300px;
+    padding: 20px;
+    overflow: auto;
+  }
+
+  .div1 {
+    flex-wrap: wrap;
+  }
+
+  .div2 {
+    flex-direction: column;
+  }
+
+  .right-box {
+    margin-left: 0;
+    max-width: 100%;
+  }
+
+  .font, .font1 {
+    font-size: 40px;
+  }
+
+  .div5 {
+    flex-direction: column;
+  }
+
+  .left-box {
+    width: 100%;
+  }
+
+  .div6 article {
+    flex-direction: column;
+  }
+}

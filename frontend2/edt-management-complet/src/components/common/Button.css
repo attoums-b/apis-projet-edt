@@ -1,0 +1,13 @@
+/**
+ * Styles pour le composant Button
+ */
+
+.btn-content {
+  display: inline-flex;
+  align-items: center;
+}
+
+.btn-full-width {
+  width: 100%;
+  justify-content: center;
+}

@@ -38,16 +38,16 @@ class EnseignantGradeStatutSerializer(serializers.ModelSerializer):
 class NotificationSerializer(serializers.ModelSerializer):
     class Meta:
         model = Notification
-        field = '__all__'
+        fields = '__all__'
 
 class AdministrateurSerializer(serializers.ModelSerializer):
     class Meta:
         model = Administrateur
-        field= '__all__'
+        fields= '__all__'
 
 class MatiereSerializer(serializers.ModelSerializer):
     class Meta:
         model = Matiere
-        field= '__all__'
+        fields= '__all__'
 
 

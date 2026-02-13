@@ -11,10 +11,6 @@ from .models import Enseignant, Salle,Notification
 from .serializers import *
 
 
-# Create your views here.
-#fonction qui retourne bonjour
-def home(request):
-    return HttpResponse("bonjour! ça marche bien tkt")
 
 #définition des vues associés à l'administrateur
 
@@ -81,9 +77,6 @@ def gerer_notification(request):
   
     return Response(serializerNotif.errors,status=status.HTTP_400_BAD_REQUEST)
     
-
-
-
 
 #fonction permettant de supprimer un Enseignant
 @api_view(['DELETE'])

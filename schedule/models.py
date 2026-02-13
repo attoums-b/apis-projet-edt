@@ -11,7 +11,6 @@ class Administrateur(models.Model):
     permissions = models.TextField(blank=True, null=True)
 
     class Meta:
-        managed = False
         db_table = 'administrateur'
 
 
@@ -24,7 +23,6 @@ class Cours(models.Model):
     id_enseignant = models.ForeignKey('Enseignant', models.DO_NOTHING, db_column='id_enseignant', blank=True, null=True)
 
     class Meta:
-        managed = False
         db_table = 'cours'
 
 
@@ -38,7 +36,6 @@ class Disponibilite(models.Model):
     commentaire = models.TextField(blank=True, null=True)
 
     class Meta:
-        managed = False
         db_table = 'disponibilite' 
 
 
@@ -51,7 +48,6 @@ class EmploiDuTemps(models.Model):
     statut = models.CharField(max_length=20, blank=True, null=True)
 
     class Meta:
-        managed = False
         db_table = 'emploi_du_temps'
 
 
@@ -66,7 +62,6 @@ class Enseignant(models.Model):
     statut = models.CharField(max_length=20, blank=True, null=True)
 
     class Meta:
-        managed = False
         db_table = 'enseignant'
 
 
@@ -76,7 +71,6 @@ class EnseignantMatiere(models.Model):
     id_matiere = models.ForeignKey('Matiere', models.DO_NOTHING, db_column='id_matiere')
 
     class Meta:
-        managed = False
         db_table = 'enseignant_matiere'
 
 
@@ -87,7 +81,6 @@ class EquipementSalle(models.Model):
     quantite = models.IntegerField(blank=True, null=True)
 
     class Meta:
-        managed = False
         db_table = 'equipement_salle'
 
 
@@ -96,7 +89,6 @@ class Matiere(models.Model):
     nom_matiere = models.CharField(max_length=100)
 
     class Meta:
-        managed = False
         db_table = 'matiere'
 
 
@@ -111,7 +103,6 @@ class Notification(models.Model):
     est_lue = models.BooleanField(blank=True, null=True)
 
     class Meta:
-        managed = False
         db_table = 'notification'
 
 
@@ -124,5 +115,4 @@ class Salle(models.Model):
     est_disponible = models.BooleanField(default=True)
  
     class Meta:
-        managed = False
         db_table = 'salle'

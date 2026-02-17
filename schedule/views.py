@@ -1,5 +1,4 @@
-from django.shortcuts import render
-from django.http import HttpResponse
+
 
 from rest_framework.response import Response #permet de renvoyer les réponses de la requete sous forme de fichier json
 from rest_framework import generics #permet de visualiser les fichiers api en json (avec des get ou post)
@@ -41,6 +40,7 @@ def retourner_salles(request):
     serializerSalle = SalleSerializer(salle,many=True)
     return Response(serializerSalle.data)
 
+
 #fonction permettant de retourner uniquement les salles disponibles
 @api_view(['GET'])
 def retourner_salles_disponibles(request):
@@ -50,11 +50,6 @@ def retourner_salles_disponibles(request):
 
 
     
-
-
-
-
-
 #fonction permettant à l'administrateur d'envoyer une notificaiton
 def envoyer_notification():
     pass
@@ -62,12 +57,6 @@ def envoyer_notification():
 
 
 #fonction permettant de stocker et envoyer une notification
-
-"""
-Explication : l'administrateur envoie une notification qui est 
-ensuite stockée dans la bd et celle ci est automatiquement envoyée 
-à celui qu'il a défini : tous les enseignants , a un enseignant en particulier
-"""
 @api_view(['POST'])
 def gerer_notification(request):
     serializerNotif = NotificationSerializer(data=request.data)
@@ -91,6 +80,7 @@ def supprimerEnseignant(request,id):
 
 
 
+#vue générique permettant de modifier le grade et le statut d'un enseignant coté backend 
 class EnseignantGradeStatusUpdateView(generics.UpdateAPIView):
     queryset = Enseignant.objects.all()
     serializer_class = EnseignantGradeStatutSerializer
@@ -98,9 +88,8 @@ class EnseignantGradeStatusUpdateView(generics.UpdateAPIView):
 
 
 
-
+#fonction devant permettre de modifier une information de l'enseignant(grade et statut)
 @api_view(['PUT'])  
-#fonction devant permettre de changer le grade et le statut de l'enseignant
 def modifier_infos_enseignant(request,id):
     try:
         enseignant = Enseignant.objects.get(id_enseignant=id)
@@ -152,22 +141,8 @@ def afficher_notifications_enseignant(request,id):
     
 
 
-#fonction permettant d'enregistrer un enseignant dans la base
 
-"""
-On enregistre un enseignant avec :
--son nom 
--son prenom 
--sa date de naissance 
--email 
--mot de passe 
--departement (avec une liste de département qu'il doit choisir)
--grade par défaut : enseignant titulaire
--statut par défaut : actif 
-
-a la fin de l'enregistrement , un id lui est attribué automatiquement
-"""
-
+#fonction permettant d'enregistrer un enseignant dans la base (par inscription de celui-ci)
 @api_view(['POST'])
 def ajouter_enseignant(request):
     #faire une copies des donnees entrées par l'enseignants
